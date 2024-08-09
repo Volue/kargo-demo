@@ -19,7 +19,7 @@ spec:
   requestedFreight:
     - origin:
         kind: Warehouse
-        name: argo-poc-warehouse
+        name: guestbook
       sources:
         direct: true        
     # If you have an Argo CD application that should be synced after the git repo is updated,
@@ -50,7 +50,7 @@ spec:
   requestedFreight:
     - origin:
         kind: Warehouse
-        name: argo-poc-warehouse
+        name: guestbook
       sources:
         direct: true        
     # argoCDAppUpdates:
@@ -80,7 +80,7 @@ spec:
   requestedFreight:
     - origin:
         kind: Warehouse
-        name: argo-poc-warehouse
+        name: guestbook
       sources:
         direct: true  
     # argoCDAppUpdates:
