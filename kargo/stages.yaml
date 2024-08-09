@@ -49,7 +49,8 @@ spec:
         kind: Warehouse
         name: guestbook
       sources:
-        direct: true        
+        stages:
+          - dev   
     # argoCDAppUpdates:
     # - appName: guestbook-staging
 
@@ -77,6 +78,7 @@ spec:
         kind: Warehouse
         name: guestbook
       sources:
-        direct: true  
+        stages:
+          - staging
     # argoCDAppUpdates:
     # - appName: guestbook-prod
