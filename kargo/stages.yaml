@@ -6,8 +6,7 @@ metadata:
   annotations:
     kargo.akuity.io/color: red
 spec:
-  subscriptions:
-    warehouse: guestbook
+  subscriptions: {}
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/akuity/kargo-simple.git
@@ -36,9 +35,7 @@ metadata:
   annotations:
     kargo.akuity.io/color: amber
 spec:
-  subscriptions:
-    upstreamStages:
-      - name: dev
+  subscriptions: {}
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/akuity/kargo-simple.git
@@ -65,9 +62,7 @@ metadata:
   annotations:
     kargo.akuity.io/color: violet
 spec:
-  subscriptions:
-    upstreamStages:
-      - name: staging
+  subscriptions: {}
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/akuity/kargo-simple.git
