@@ -17,7 +17,7 @@ spec:
       kustomize:
         images:
         - image: public.ecr.aws/nginx/nginx
-          path: stages/test
+          path: stages/dev
     argoCDAppUpdates:
     - appName: kargo-demo-dev
       appNamespace: argocd
