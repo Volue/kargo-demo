@@ -1,0 +1,74 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: dev
+  namespace: kargo-demo
+spec:
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: kargo-demo
+    sources:
+      direct: true
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/Volue/kargo-demo.git
+      writeBranch: stages/dev
+      kustomize:
+        images:
+        - image: public.ecr.aws/nginx/nginx
+          path: stages/dev
+    argoCDAppUpdates:
+    - appName: kargo-demo-dev
+      appNamespace: argocd
+
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: staging
+  namespace: kargo-demo
+spec:
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: kargo-demo
+    sources:
+      stages:
+      - dev
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/Volue/kargo-demo.git
+      writeBranch: stages/staging
+      kustomize:
+        images:
+        - image: public.ecr.aws/nginx/nginx
+          path: stages/staging
+    argoCDAppUpdates:
+    - appName: kargo-demo-staging
+      appNamespace: argocd
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: prod
+  namespace: kargo-demo
+spec:
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: kargo-demo
+    sources:
+      stages:
+      - staging
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/Volue/kargo-demo.git
+      writeBranch: stages/prod
+      kustomize:
+        images:
+        - image: public.ecr.aws/nginx/nginx
+          path: stages/prod
+    argoCDAppUpdates:
+    - appName: kargo-demo-prod
+      appNamespace: argocd
