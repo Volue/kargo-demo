@@ -8,8 +8,8 @@ resources:
 patches:
 - patch: |-
     - op: replace
-      path: /spec/ports/0/port
-      value: 8080
+      path: /spec/ports/0/nodePort
+      value: 30081
   target:
     kind: Service
     name: kargo-demo

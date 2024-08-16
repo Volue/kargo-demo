@@ -8,11 +8,11 @@ resources:
 patches:
 - patch: |-
     - op: replace
-      path: /spec/ports/0/port
-      value: 8080
+      path: /spec/ports/0/nodePort
+      value: 30083
   target:
     kind: Service
     name: kargo-demo
 images:
 - name: public.ecr.aws/nginx/nginx
-  newTag: 1.27.0
+  newTag: "1.26"

@@ -9,6 +9,3 @@ spec:
       repoURL: public.ecr.aws/nginx/nginx
       semverConstraint: ^1.26.0
       discoveryLimit: 5
-  - git:
-      repoURL: https://github.com/Volue/kargo-demo.git
-      branch: main    

@@ -13,7 +13,7 @@ spec:
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/Volue/kargo-demo.git
-      writeBranch: stages/dev
+      writeBranch: main
       kustomize:
         images:
         - image: public.ecr.aws/nginx/nginx
@@ -39,7 +39,7 @@ spec:
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/Volue/kargo-demo.git
-      writeBranch: stages/staging
+      writeBranch: main
       kustomize:
         images:
         - image: public.ecr.aws/nginx/nginx
@@ -64,7 +64,7 @@ spec:
   promotionMechanisms:
     gitRepoUpdates:
     - repoURL: https://github.com/Volue/kargo-demo.git
-      writeBranch: stages/prod
+      writeBranch: main
       kustomize:
         images:
         - image: public.ecr.aws/nginx/nginx
